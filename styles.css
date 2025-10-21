@@ -1,0 +1,39 @@
+/* styles.css */
+
+/*
+ * Força um espaçamento superior no corpo da página para compensar a altura
+ * da barra de navegação customizada. O '!important' é CRUCIAL para
+ * sobrescrever o estilo automático do flexdashboard.
+*/
+body {
+  padding-top: 50px !important; 
+}
+
+/*
+ * Estilos para alinhar o logo e o título na barra de navegação.
+*/
+.navbar-header {
+  display: flex;
+  align-items: center;
+  /* width: 75%; pode não ser necessário, remova se causar problemas de layout */
+}
+
+.navbar-brand {
+  order: 2; /* Posição do título */
+   font-size: 24px; /* Ajuste o título para o tamanho desejado */
+   font-weight: bold; /* Opcional: para deixar em negrito */
+}
+
+.navbar-logo {
+  order: 1; /* Posição do logo */
+  margin-right: 15px; /* Adiciona um espaço entre o logo e o título */
+}
+
+/* * Ajusta o tamanho do logo para uma altura mais apropriada para a navbar.
+ * Isso evita que a barra fique excessivamente alta.
+*/
+.navbar-logo img {
+  height: 70px; /* ALTURA RECOMENDADA */
+  width: auto; 
+  vertical-align: middle; 
+}
