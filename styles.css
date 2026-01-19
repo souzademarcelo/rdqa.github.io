@@ -15,9 +15,9 @@ body {
 #dashboard-container {
   max-width: 1400px !important;
   width: 100% !important;
-  margin: 0 auto !important;
+  margin: 0px auto !important;
   background-color: #f7f7f7; 
-box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+box-shadow: 0 15px 15px rgba(0,0,0,0.15);
 }
 
 .navbar-fixed-top {
@@ -112,52 +112,6 @@ box-shadow: 0 15px 35px rgba(0,0,0,0.15);
   padding: 12px 20px !important;
 }
 
-/* ==========================================================================
-   4. CORREÇÃO MOBILE (TELAS PEQUENAS)
-   ========================================================================== */
-
-@media screen and (max-width: 768px) {
-  
-  body {
-    padding-top: 100px !important; 
-  }
-
-  .navbar-fixed-top {
-    max-width: 100% !important;
-  }
-
-  /* --- AJUSTE DO TAMANHO DA LOGO (MOBILE) --- */
-  .navbar-logo img {
-    height: 35px; /* Logo ainda menor para telas de celular */
-  }
-
-  .navbar-header {
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-  }
-
-  .navbar-collapse {
-    display: none !important; 
-    border-top: 1px solid rgba(0,0,0,0.1) !important;
-  }
-
-  .navbar-collapse.in, .navbar-collapse.show {
-    display: block !important;
-    background-color: #222; 
-  }
-
-  .navbar-nav {
-    flex-direction: column !important; 
-  }
-
-  .navbar-toggle {
-    display: block !important; 
-    float: none !important;
-    margin: 0 !important;
-  }
-}
-
 
 /* Seleciona o link de contato específico na navbar do flexdashboard */
 .navbar-nav > li > a[href^="mailto:"] {
@@ -186,4 +140,93 @@ box-shadow: 0 15px 35px rgba(0,0,0,0.15);
     margin: 10px;
     width: auto;
   }
+}
+
+
+/* ==========================================================================
+   4. CORREÇÃO MOBILE (RECOLHÍVEL E ADAPTÁVEL)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  body {
+    padding-top: 120px !important; /* Reduz espaço no mobile */
+  }
+
+  .navbar-header {
+    padding: 10px 15px !important;
+  }
+
+  .navbar-logo img {
+    height: 35px; /* Logo menor no mobile */
+  }
+
+  .navbar-brand {
+    font-size: 16px !important;
+    max-width: 200px;
+    white-space: normal !important;
+  }
+
+  .navbar-brand::after {
+    font-size: 9px;
+  }
+
+  /* Botão Menu (Hambúrguer) posicionado à direita */
+  .navbar-toggle {
+    display: block !important;
+    margin: 0 !important;
+    background-color: rgba(255,255,255,0.1) !important;
+    border: 1px solid rgba(255,255,255,0.4) !important;
+  }
+
+  /* Menu suspenso mobile */
+  .navbar-collapse {
+    display: none !important; /* Escondido por padrão */
+    width: 100% !important;
+    background-color: #005a9e !important;
+    border-top: 1px solid rgba(255,255,255,0.1) !important;
+    clear: both !important;
+  }
+
+  /* Mostra o menu quando clicado (classe injetada pelo Bootstrap) */
+  .navbar-collapse.in, .navbar-collapse.show {
+    display: block !important;
+  }
+
+  .navbar-nav {
+    flex-direction: column !important;
+    margin: 0 !important;
+  }
+
+  .navbar-nav > li > a {
+    padding: 15px 20px !important;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+  }
+
+  /* Ajuste do botão de contato no Mobile */
+  .navbar-nav > li > a[href^="mailto:"] {
+    display: block !important;
+    margin: 15px !important;
+    text-align: center;
+  }
+}
+
+/* ==========================================================================
+   5. BOTÃO DE CONTATO (ESTILO INSTITUCIONAL)
+   ========================================================================== */
+
+.navbar-nav > li > a[href^="mailto:"] {
+  background-color: #1E90FF !important;
+  color: white !important;
+  border-radius: 8px;
+  margin: 8px 15px !important;
+  padding: 6px 15px !important;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav > li > a[href^="mailto:"]:hover {
+  background-color: #87CEFA !important;
+  transform: translateY(-1px);
 }
